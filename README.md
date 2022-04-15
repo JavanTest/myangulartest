@@ -8,8 +8,8 @@ My goal is to deploy the application in a Docker Container, to do it I did the f
  1. Build the application 
     ng build
  2. Create a docker image
-    - create a dockerfile (see the context in the root of the application)
-    - generate the image running
+ 3. 
+     - generate the image running
       docker build -t mytest:1.0 -f dockerfile .
  3. running the image in a container
     docker run -td --name mytestcontainer mytest:1.0
