@@ -6,17 +6,18 @@ Run `ng serve -o` for a dev server
 
 My goal is to deploy the application in a Docker Container, to do it I did the following steps
  1. Build the application 
-    ng build
+    `ng build`
+    
  2. Create a docker image
  
      - generate the image running
-      docker build -t mytest:1.0 -f dockerfile .
+      `docker build -t mytest:1.0 -f dockerfile .`
  3. running the image in a container
-    docker run -td --name mytestcontainer mytest:1.0
+    `docker run -td --name mytestcontainer mytest:1.0`
  
  4. The logs shows the web application started but I can't fine to execute it from my localhost outside the container
  
-    docker logs mytestcontainer
+    `docker logs mytestcontainer`
 
     ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
     
