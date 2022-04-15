@@ -15,7 +15,7 @@ My goal is to deploy the application in a Docker Container, to do it I did the f
  3. running the image in a container
     `docker run -td --name mytestcontainer mytest:1.0`
  
- 4. The logs shows the web application started but I can't fine to execute it from my localhost outside the container
+ 4. The logs shows the web application started but I can't fine the way to execute it from browser as localhost 
  
     `docker logs mytestcontainer`
 
