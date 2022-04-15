@@ -1,27 +1,39 @@
 # Myangulartest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+The application works fine running in the Development server   
+Run `ng serve -o` for a dev server
 
-## Development server
+My goal is to deploy the application in a Docker Container, to do it I did the following steps
+ 1. Build the application 
+    ng build
+ 2. Create a docker image
+    - create a dockerfile (see the context in the root of the application)
+    - generate the image running
+      docker build -t mytest:1.0 -f dockerfile .
+ 3. running the image in a container
+    docker run -td --name mytestcontainer mytest:1.0
+ 
+ 4. The logs shows the web application started but I can't fine to execute it from my localhost outside the container
+ 
+    docker logs mytestcontainer
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+    
+    ✔ Compiled successfully.
+    
+    ✔ Browser application bundle generation complete.
+    
+    5 unchanged chunks
+    
+    Build at: 2022-04-15T18:29:30.778Z - Hash: 06875e2952c4212d - Time: 398ms
+    
+    ✔ Compiled successfully.
+    
+ 5. I can't run the application from my browser
+    - http://localhost:4200/   
+    
+    Neither with the expose port expecified in the dockerfile 
+    - http://localhost:3200/
+   
+    
